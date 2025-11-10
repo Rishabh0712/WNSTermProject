@@ -62,10 +62,13 @@ WNS/
 │   └── ci-scripts/
 │       └── yaml_files/
 │           └── 5g_rfsimulator/  # Docker compose configurations
+├── ue_location_service.py        # UE Location Service (extract location from AMF)
+├── ue_location.json              # Sample UE location data
 ├── midterm_presentation.pptx     # Project presentation
 ├── 5G_SETUP_SUMMARY.md          # Setup documentation
 ├── proposal.pdf                  # Initial proposal
 ├── midterm.pdf                   # Midterm deliverable template
+├── GITHUB_SETUP.md              # GitHub repository setup guide
 └── README.md                     # This file
 ```
 
@@ -136,6 +139,49 @@ sudo docker-compose up -d oai-gnb
 # Deploy UE
 sudo docker-compose up -d oai-nr-ue
 ```
+
+---
+
+## UE Location Service
+
+The project includes a Python-based UE Location Service that extracts real-time location information from AMF logs.
+
+### Features
+- Extract UE location by IMSI or IMEI
+- Parse AMF logs for network location data
+- Display Cell ID, gNB information, TAC, and PLMN
+- Export location data to JSON
+- Support for multiple UEs
+
+### Usage
+
+#### Get location by IMSI
+```bash
+sudo python3 ue_location_service.py --imsi 208990100001100
+```
+
+#### Get location by IMEI
+```bash
+sudo python3 ue_location_service.py --imei 862104052096703
+```
+
+#### Get all UE locations
+```bash
+sudo python3 ue_location_service.py --all
+```
+
+#### Export to JSON
+```bash
+sudo python3 ue_location_service.py --imsi 208990100001100 --export location.json
+```
+
+### Location Data Extracted from AMF
+- **UE Identity:** IMSI, GUTI, RAN UE NGAP ID, AMF UE NGAP ID
+- **Network Location:** Cell ID, TAC, PLMN (MCC/MNC)
+- **gNB Information:** gNB ID, gNB Name, Connection Status
+- **Registration State:** 5GMM State (REGISTERED, IDLE, etc.)
+
+Note: The service extracts only real data from AMF logs. Geographic coordinates (latitude/longitude) require an external cell database.
 
 ---
 
