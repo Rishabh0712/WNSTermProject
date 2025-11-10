@@ -1,0 +1,44 @@
+# Ignore OAI repository (too large for GitHub)
+openairinterface5g/
+
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Docker volumes and data
+*.pcap
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.out
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Compiled files
+*.o
+*.so
+*.exe
+*.dll
+
+# Documentation build artifacts
+_build/
+dist/
+build/
