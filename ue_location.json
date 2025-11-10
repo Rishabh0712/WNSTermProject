@@ -1,0 +1,31 @@
+{
+  "ue_identity": {
+    "imsi": "208990100001100",
+    "guti": "20899010041405638820",
+    "ran_ue_ngap_id": "0x01",
+    "amf_ue_ngap_id": "0x01"
+  },
+  "network_location": {
+    "plmn": {
+      "mcc": "208",
+      "mnc": "99"
+    },
+    "cell_id": "0000e014e",
+    "tac": "00 00 01",
+    "tracking_area": "00 00 01"
+  },
+  "gnb_info": {
+    "gnb_id": "0x0E00",
+    "gnb_name": "gnb-rfsim",
+    "status": "Connected"
+  },
+  "geographic_location": {
+    "cell_id": "0000e014e",
+    "gnb_name": "gnb-rfsim",
+    "gnb_id": "0x0E00",
+    "tac": "00 00 01",
+    "plmn": "02 F8 99"
+  },
+  "state": "5GMM-REGISTERED",
+  "last_updated": "2025-11-10T17:49:59.660109"
+}
