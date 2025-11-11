@@ -1,0 +1,376 @@
+\documentclass[11pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Privacy-Preserving Mobile Phone Localization\\with Cryptographic Authorization in 5G Networks\\Mid-Term Status}
+\author{Rishabh Kumar (cs25resch04002)}
+\institute{CS5553: Wireless Networks and Security}
+\date{November 11, 2025}
+
+\begin{document}
+
+% Slide 1: Title
+\frame{\titlepage}
+
+% Slide 2: Project Overview (Review)
+\begin{frame}{Project Overview (Review)}
+\textbf{Problem Statement}
+\begin{itemize}
+    \item Current 5G positioning systems process location data in plaintext through centralized Location Management Functions (LMF), enabling potential mass surveillance without authorization controls or privacy protections
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Key Objectives}
+\begin{itemize}
+    \item Design cryptographic multi-party authorization framework for 5G positioning
+    \item Implement privacy-preserving localization using homomorphic encryption
+    \item Develop secure network slicing for authorized positioning services
+    \item Integrate judicial oversight mechanisms with threshold cryptography
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Success Metrics}
+\begin{itemize}
+    \item Positioning Accuracy: Maintain $\leq$ 3m with security controls
+    \item Authorization Latency: $<$ 5 minutes for judicial approval
+\end{itemize}
+\end{frame}
+
+% Slide 3: Methodology & Threat Model (Review)
+\begin{frame}{Methodology \& Threat Model (Review)}
+\textbf{Proposed Technical Approach}
+\begin{itemize}
+    \item \textbf{5G Simulation:} OpenAirInterface core (AMF, SMF, UPF) with custom secure LMF
+    \item \textbf{Radio Access:} RF Simulator-based gNB with multiple base stations for positioning
+    \item \textbf{Positioning Methods:} Cell-ID, E-CID, OTDOA, Multi-RTT techniques
+    \item \textbf{Privacy Enhancement:} Multi-party authorization + encrypted processing
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Threat Model}
+\begin{itemize}
+    \item \textbf{Adversary:} Rogue government agencies or compromised network operators
+    \item \textbf{Attack:} Unauthorized mass surveillance using 5G sub-meter positioning
+    \item \textbf{Method:} Compromised AMF credentials, bulk location requests, movement profiling
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Key Assumptions}
+\begin{itemize}
+    \item 5G network infrastructure follows 3GPP standards (TS 38.305)
+    \item Cryptographic primitives (threshold signatures, homomorphic encryption) are secure
+    \item Judicial authorities maintain secure key management systems
+\end{itemize}
+\end{frame}
+
+% Slide 4: Mid-Term Deliverables (Status)
+\begin{frame}{Mid-Term Deliverables (Status)}
+\textbf{Promised Mid-Term Deliverables (from Proposal)}
+\begin{table}
+\centering
+\small
+\begin{tabular}{|l|c|}
+\hline
+\textbf{Deliverable} & \textbf{Status} \\
+\hline
+5G Simulation Environment Setup & Completed \\
+\quad OpenAirInterface 5G Core (AMF, SMF, UPF) & $\checkmark$ \\
+\quad gNB and UE simulation infrastructure & $\checkmark$ \\
+\hline
+Standard Localization Implementation & Completed \\
+\quad Cell-ID and E-CID positioning methods & $\checkmark$ \\
+\quad UE location extraction from AMF logs & $\checkmark$ \\
+\hline
+Vulnerability Demonstration & Completed \\
+\quad Unauthorized location access PoC & $\checkmark$ \\
+\quad Extract UE location without authorization & $\checkmark$ \\
+\hline
+Cryptographic Security Framework & In Progress \\
+\quad TLS infrastructure foundation & $\checkmark$ \\
+\quad Threshold signature scheme & Planned \\
+\quad Multi-party authorization protocol & Planned \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+% Slide 5: Work Completed & Implementation Details
+\begin{frame}{Work Completed \& Implementation Details}
+\textbf{Hardware Setup (Simulation-Based)}
+\begin{itemize}
+    \item Windows 11 with WSL2 Ubuntu 24.04 (16GB RAM)
+    \item Docker Engine 28.2.2 for 5G component orchestration
+    \item 7 containers: MySQL, AMF, AMF-2, SMF, UPF, gNB, UE
+    \item No physical hardware required - pure software simulation
+\end{itemize}
+
+\textbf{Software \& Tools}
+\begin{itemize}
+    \item \textbf{5G Core:} OpenAirInterface v2.1.10 (AMF, SMF, UPF)
+    \item \textbf{RAN:} OAI RF Simulator (gNB + NR-UE develop branch)
+    \item \textbf{Localization:} Python 3.13.9 for positioning calculations
+    \item \textbf{Security:} Rsyslog with rsyslog-gnutls (RFC 5425), OpenSSL for x509 certificates
+\end{itemize}
+
+\textbf{Implementation}
+\begin{itemize}
+    \item \texttt{ue\_location\_service.py} - Extract Cell ID, IMSI, gNB, TAC from AMF
+    \item \texttt{rsyslog-server.conf} - Secure log collection with TLS
+    \item \texttt{amf2\_entrypoint.sh} - Custom AMF with secure logging
+    \item GitHub repo with 1500+ lines (to be pushed)
+\end{itemize}
+\end{frame}
+
+% Slide 6: Experimental Setup
+\begin{frame}{Experimental Setup}
+\textbf{5G Network Configuration}
+\begin{itemize}
+    \item Control Plane Network: 192.168.71.128/26
+    \item User Plane Network: 192.168.72.128/26
+    \item PLMN: MCC=208, MNC=99, TAC=0x0001
+    \item Test UE IMSI: 208990100001100
+    \item Multiple gNB simulation for positioning triangulation
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Metrics Used for Analysis}
+\begin{itemize}
+    \item \textbf{Positioning Accuracy:} Cell-ID and E-CID precision (target $\leq$ 3m)
+    \item \textbf{Authorization Latency:} Time for multi-party approval (target $<$ 5 min)
+    \item \textbf{Privacy Overhead:} Performance impact of encryption/authorization
+    \item \textbf{Attack Prevention:} Effectiveness against unauthorized requests
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Baseline for Comparison}
+\begin{itemize}
+    \item Standard 3GPP 5G positioning (TS 38.305) without security enhancements
+    \item RFC 5425 for TLS-based secure logging
+    \item OAI official documentation and tutorials
+\end{itemize}
+\end{frame}
+
+% Slide 7: Preliminary Results
+\begin{frame}{Preliminary Results}
+\textbf{5G Simulation Environment (Completed)}
+\begin{itemize}
+    \item All 7 containers operational: MySQL, AMF, AMF-2, SMF, UPF, gNB, UE
+    \item gNB connected to AMF (ID: 0x0E00, Status: Connected)
+    \item UE registered successfully (State: 5GMM-REGISTERED)
+    \item End-to-end connectivity verified: 0\% packet loss
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Standard Localization Implementation (Completed)}
+\begin{itemize}
+    \item \textbf{Cell-ID Method:} Successfully extracts Cell ID (0000e014e)
+    \item \textbf{E-CID Data:} TAC (00 00 01), PLMN (208/99), gNB (gnb-rfsim)
+    \item \textbf{Location Extraction:} Python service parses AMF logs for UE location
+    \item \textbf{Data Format:} JSON export for integration with authorization framework
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Vulnerability Demonstration (Completed)}
+\begin{itemize}
+    \item \textbf{Attack Vector:} Direct access to AMF container logs without authorization
+    \item \textbf{PoC:} \texttt{ue\_location\_service.py} extracts location data bypassing any auth
+    \item \textbf{Privacy Risk:} Anyone with Docker/AMF access can track UE movements
+    \item \textbf{Impact:} Demonstrates need for cryptographic authorization framework
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Security Infrastructure Foundation (In Progress)}
+\begin{itemize}
+    \item TLS-based secure communication for log transmission (x509 authentication)
+    \item Implements \textbf{RFC 5425:} TLS Transport Mapping for Syslog
+    \item Certificate chain: CA $\rightarrow$ Server $\rightarrow$ Client
+    \item Secure log collection from AMF-2 to centralized syslog server
+    \item Ready for multi-party authorization and threshold signature integration
+\end{itemize}
+\end{frame}
+
+% Slide 8: Live Demo
+\begin{frame}[plain]
+\centering
+\vspace{2cm}
+{\Huge \textbf{Live Demo}}
+
+\vspace{1.5cm}
+{\Large Demonstration of:}
+
+\vspace{0.5cm}
+\begin{enumerate}
+    \item \textbf{5G Network Simulation:} All containers running (docker ps)
+    \item \textbf{UE Registration:} Device connecting to 5G network
+    \item \textbf{Standard Localization:} Extracting UE position from AMF logs (Cell-ID, E-CID)
+    \item \textbf{VULNERABILITY DEMO:} Unauthorized location access
+    \begin{itemize}
+        \item Run \texttt{ue\_location\_service.py} without any authorization
+        \item Extracts UE location: Cell ID, gNB, TAC, PLMN, 5GMM State
+        \item No authentication/authorization required - Privacy breach!
+    \end{itemize}
+    \item \textbf{Defense Foundation:} TLS infrastructure for future authorization layer
+\end{enumerate}
+
+\vspace{0.3cm}
+{\small Next: Implement threshold signatures to prevent unauthorized access}
+\end{frame}
+
+% Slide 9: Challenges & Risks - Part 1
+\begin{frame}{Challenges \& Risks Encountered}
+\textbf{Original Risks (from proposal)}
+\begin{itemize}
+    \item Simulation complexity for realistic 5G positioning
+    \item Cryptographic performance overhead
+    \item Integration of multi-party authorization with 3GPP standards
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Technical Challenges Faced}
+\begin{itemize}
+    \item \textbf{Infrastructure \& 5G Simulation:} WSL resource limitations, container orchestration complexity, AMF/gNB integration issues
+    \item \textbf{Security:} TLS certificate management, authentication configuration
+    \item \textbf{Positioning:} Limited to Cell-ID/E-CID (OTDOA, Multi-RTT require multiple gNBs)
+\end{itemize}
+\end{frame}
+
+% Slide 10: Challenges & Risks - Part 2
+\begin{frame}{Design Challenges \& Solutions}
+\textbf{Design Choices \& Architectural Challenges}
+\begin{itemize}
+    \item \textbf{Authorization Service Integration:} How to integrate multi-party authorization framework?
+    \begin{itemize}
+        \item Option 1: Modify AMF directly (3GPP non-compliant, breaks standards)
+        \item Option 2: Proxy/middleware layer between LMF and AMF (adds latency)
+        \item Option 3: Separate authorization service with hooks into LMF (chosen approach)
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Solutions Implemented}
+\begin{itemize}
+    \item Leveraged existing RFC 5425 for secure syslog implementation
+    \item Implemented triangulation with multiple gNBs for improved positioning accuracy
+\end{itemize}
+\end{frame}
+
+% Slide 11: Shamir's Secret Sharing - Concept
+\begin{frame}{Shamir's Secret Sharing for Multi-Party Authorization}
+\textbf{Problem with Current System}
+\begin{itemize}
+    \item Single entity (AMF operator/admin) can authorize location requests
+    \item No checks and balances $\rightarrow$ Potential for abuse
+    \item Demonstrated vulnerability: Anyone with AMF access can track UEs
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Proposed Solution: Threshold Cryptography}
+\begin{itemize}
+    \item Require multiple independent parties to approve location requests
+    \item Use \textbf{(t, n)-Threshold Scheme:} $t$ out of $n$ parties must agree
+    \item Proposed: \textbf{(3, 5) scheme} - 3 out of 5 parties must approve
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{5 Authorization Parties:}
+\begin{enumerate}
+    \item \textbf{Judicial Authority} - Court order validation
+    \item \textbf{Law Enforcement Agency} - Investigation justification
+    \item \textbf{Network Operator Security Officer} - Technical feasibility
+    \item \textbf{Privacy Oversight Officer} - Privacy impact assessment
+    \item \textbf{Independent Auditor} - Compliance verification
+\end{enumerate}
+
+\vspace{0.3cm}
+\textbf{Key Property:} Cannot track UE unless 3+ parties collude
+\end{frame}
+
+% Slide 12: Shamir's Secret Sharing - Mathematical Foundation
+\begin{frame}{Shamir's Secret Sharing - Mathematical Foundation}
+\textbf{How It Works (Shamir 1979):}
+
+\vspace{0.3cm}
+\textbf{1. Secret Generation \& Sharing}
+\begin{itemize}
+    \item Authorization secret $S$ (e.g., LMF access key)
+    \item Encode as polynomial of degree $t-1$:
+    $$f(x) = S + a_1x + a_2x^2 + \ldots + a_{t-1}x^{t-1} \pmod{p}$$
+    where $p$ is large prime, $a_i$ are random coefficients
+    \item Each party $i$ receives share: $(i, f(i))$
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{2. Secret Reconstruction}
+\begin{itemize}
+    \item Collect $t$ shares: $(x_1, y_1), (x_2, y_2), \ldots, (x_t, y_t)$
+    \item Use Lagrange interpolation to reconstruct polynomial:
+    $$S = f(0) = \sum_{j=1}^{t} y_j \prod_{k=1, k \neq j}^{t} \frac{x_k}{x_k - x_j}$$
+    \item Recovered $S$ authorizes location request to LMF
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Security Properties:}
+\begin{itemize}
+    \item \textbf{Perfect Security:} Fewer than $t$ shares reveal \textit{zero} information about $S$
+    \item \textbf{Flexible Threshold:} Can adjust $t$ based on privacy requirements
+\end{itemize}
+\end{frame}
+
+% Slide 13: Updated Timelines & Next Steps
+\begin{frame}{Updated Timelines \& Next Steps}
+\textbf{Completed Work (Mid-Term)}
+\begin{itemize}
+    \item 5G Simulation Environment (OAI + gNB + UE) $\rightarrow$ \textbf{Done}
+    \item Standard Localization (Cell-ID, E-CID) $\rightarrow$ \textbf{Done}
+    \item Vulnerability Demonstration (unauthorized access) $\rightarrow$ \textbf{Done}
+    \item Security Infrastructure Foundation (TLS, RFC 5425) $\rightarrow$ \textbf{Done}
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{Work Remaining for Final Deliverable (Nov 24)}
+\begin{itemize}
+    \item \textbf{Week 1 (Nov 11-17):}
+    \begin{itemize}
+        \item Implement threshold signature scheme (Shamir's Secret Sharing)
+        \item Develop multi-party authorization protocol (3-of-5 approval)
+        \item Begin homomorphic encryption integration for privacy-preserving positioning
+    \end{itemize}
+    \item \textbf{Week 2 (Nov 18-24):}
+    \begin{itemize}
+        \item Complete secure LMF with encrypted positioning calculations
+        \item Performance benchmarking: Standard vs. Privacy-Preserving
+        \item Final attack/defense demonstration comparing both approaches
+        \item Documentation, final report, GitHub repository push
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% Slide 14: References
+\begin{frame}{References}
+\textbf{GitHub Repository}
+\begin{itemize}
+    \item \url{https://github.com/username/WNS} (to be pushed with final deliverable)
+\end{itemize}
+
+\vspace{0.4cm}
+\textbf{References}
+\begin{enumerate}
+    \item 3GPP TS 38.305: "Stage 2 functional specification of User Equipment (UE) positioning in NG-RAN"\\
+    \url{https://portal.3gpp.org/desktopmodules/Specifications/SpecificationDetails.aspx?specificationId=3501}
+    
+    \item Shamir, A.: "How to share a secret." \textit{Communications of the ACM} 22.11 (1979): 612-613
+    
+    \item Gentry, C.: "Fully homomorphic encryption using ideal lattices." \textit{STOC} 2009
+    
+    \item OpenAirInterface 5G Core: \url{https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-fed}
+    
+    \item OAI 5G RAN: \url{https://gitlab.eurecom.fr/oai/openairinterface5g}
+    
+    \item Microsoft SEAL Library: \url{https://github.com/Microsoft/SEAL}
+\end{enumerate}
+\end{frame}
+
+\end{document}

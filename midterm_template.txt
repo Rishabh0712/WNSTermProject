@@ -1,0 +1,428 @@
+Classroom
+
+Sample-MidTerm-Presentation-TermProject.pptx
+Open Networks
+with Google Slides
+CS5553: Wireless
+and Security (July 2025)
+
+Stream
+
+Classwork
+
+Page 1 of 11
+
+People
+
+Topic filter
+
+assignment_ind
+
+All topics
+
+View your work
+Project Title Mid-Term Status
+
+Class learning tools
+Gem
+
+5G Security Gem
+
+Instructions
+L8:A-B: Intro to 5G and its System Arc…
+
+Open
+
+Posted Oct 28
+Names/RollNos of Team Members
+
+Instant Quiz on WPA 2/3
+
+Due Oct 21, 5:30 PM
+
+Slip Test 2
+
+Due Sep 23, 4:16 PM
+
+Slip Test 1
+
+Page 2 of 11
+
+Due Sep 16, 4:20 PM
+
+Project Overview (Review)
+
+GCQs
+GCQ4: Online Privacy
+
+Page
+
+1
+
+/
+
+11
+
+Problem statement
+
+Due Sep 22
+
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+
+GCQ3: All about vulnerabilities
+
+Due Sep 18
+
+Sample-MidTerm-Presentation-TermProject.pptx
+Open with Google Slides
+
+Stream
+
+GCQ2: DCF with RTS/CTS in action
+
+Classwork
+
+Due Aug 25
+
+Page 1 of 11
+
+People
+
+GCQ1: CSMA/CA in Action comment 3
+
+Due Aug 21
+
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+
+Project Title Mid-Term Status
+
+Attendance
+Attendance (Oct 31)
+
+Due Oct 31, 4:10 PM
+
+Attendance (Oct 24)
+
+Due Oct 24, 4:10
+PM
+Names/RollNos
+of Team Members
+
+Attendance (Oct 17)
+
+Due Oct 17, 4:00 PM
+
+Attendance (Oct 7)
+
+Due Oct 7, 5:45 PM
+
+Attendance (Sept 26)
+
+Page 2 of 11
+
+Due Sep 26, 4:10 PM
+
+Attendance (Sept 12)
+
+Due Sep
+12, 4:10 PM
+Project Overview
+(Review)
+
+Attendance (Sept 2)
+
+Due Sep 2, 5:40 PM
+Page
+
+/
+
+11
+
+Problem statement
+
+Attendance (Aug 29)
+Sample-MidTerm-Presentation-TermProject.pptx
+Open with Google Slides
+Stream
+
+Page 1 of 11
+
+ClassworkAttendance:
+PeopleAug 26
+
+Attendance: Aug 22 comment 2
+
+Due Aug 29, 2:40 PM
+Due Aug 26, 4:10 PM
+Due Aug 22, 2:40 PM
+
+Project Title Mid-Term Status
+
+View more
+
+Reading Material/Tutorials
+
+Tutorial 4 Submission
+
+Due Oct 10
+
+Tutorial 4: Cracking WPA2-PSK Mode …
+
+Posted Oct 10
+Page 2 of 11
+
+Tutorial 3: Configure a Wi-Fi Access P…
+
+Posted Sep 5
+Project Overview (Review)
+
+WNS: Packet Sniffing Tutorial
+
+Posted Sep 3
+
+All about 802.11 Stds
+
+Posted Aug 27
+/
+
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+
+Names/RollNos
+of Team Members
+Edited Nov
+7
+
+Tutorial 5: Setting up 5G Network usin…
+
+Page
+
+more_vert
+more_vert
+more_vert
+
+11
+2
+
+WNS Tutorial 2: Enabling Monitor M… comment
+
+Problem statement
+
+Posted Aug 26
+
+Sample-MidTerm-Presentation-TermProject.pptx
+Open with Google Slides
+
+Wireshark Tutorial
+
+Stream
+
+Classwork
+
+Edited Aug 27
+
+Page 1 of 11
+
+People
+
+All About Traceroute
+
+Posted Aug 8
+
+Assignments
+
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+
+Project Title Mid-Term Status
+
+Term Project: Mid-Term Status Submis…
+
+Due Tomorrow, 12:30 PM
+
+Posted Nov 5
+
+Assigned
+
+Names/RollNos
+Submit a short mid-term project status report by filling out the attached sample template. One submission
+per of Team Members
+group suffices. No late submissions allowed.
+
+Mid-term evaluation (progress check): 11 Nov 2025 at 4PM
+Final submission, report & viva/demo: 24 Nov 2025.
+
+Sample-MidTerm-Presenta…
+Microsoft PowerPoint
+
+Page 2 of 11
+
+Project Overview (Review)
+
+View instructions
+
+Term Project: My Problem Statement comment 2
+Page
+
+/
+
+11
+
+Due Oct 31, 2:00 PM
+
+Problem statement
+
+more_vert
+
+Asg 4: WPA2 Security Analysis & Audit…
+
+Due Oct 23
+
+Sample-MidTerm-Presentation-TermProject.pptx
+Open with Google Slides
+
+Stream
+
+Asg3: TLS Trace Analysis Using Wiresh…
+
+Classwork
+
+People
+
+Page 1 of 11
+
+Due Sep 30
+
+HWA1: Website Impersonation Attacks
+
+Due Sep 23
+
+Asg2: Wi-Fi Trace Analysis using Wires…
+
+Due Sep 7
+
+Asg1: Packet Capture and Analysis … comment 1
+
+Due Aug 13
+
+Project Title Mid-Term Status
+
+Slide Deck
+
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+
+Names/RollNos of Team Members
+
+L8:A-B: Intro to 5G and its System Arc…
+
+Posted Oct 28
+
+L7: Wi-Fi Security (All)
+
+Posted Oct 21
+
+L7-B: WPA2
+
+Page 2 of 11
+
+L7-A: Attacks on Wi-Fi Networks
+
+Edited Oct 7
+Posted Sep 24
+Project Overview (Review)
+
+L6: TLS
+L5: An overview of PKI
+
+more_vert
+more_vert
+more_vert
+more_vert
+more_vert
+
+Posted Sep 20
+Page
+
+/
+
+11
+
+Problem statement
+
+Posted Sep 18
+
+L4: Principles of Cryptography
+comment 2with Google Slides
+Sample-MidTerm-Presentation-TermProject.pptx
+Open
+Stream
+
+Page 1 of 11
+
+ClassworkL3: Network
+People
+Security Concepts
+
+Posted Sep 14
+Posted Sep 14
+
+more_vert
+more_vert
+more_vert
+more_vert
+
+L2: 802.11 (All)
+
+Posted Sep 2
+
+L2-CD:802.11 (Scanning and Mixed M…
+
+PostedProject
+AugTitle
+31 Mid-Term Status
+
+View more
+
+Names/RollNos of Team Members
+
+Page 2 of 11
+
+Project Overview (Review)
+
+Page
+
+/
+
+11
+
+Problem statement
+
+

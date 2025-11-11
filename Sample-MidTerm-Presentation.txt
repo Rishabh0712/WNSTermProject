@@ -1,0 +1,94 @@
+Project TitleMid-Term Status
+Names/RollNos of Team Members
+
+ID=d924773e-9a16-4d6d-9803-8cb819e99682Recipe=text_billboardType=TextOnlyVariant=0FamilyID=AccentBoxWalbaum_Zero
+1
+
+Project Overview (Review)
+Problem statement
+Briefly restate the problem you are solving (1-2 lines)
+Key Objectives
+List the 2-3 main objectives you proposed.
+
+2
+
+Methodology & Threat Model (Review)
+Proposed Technical Approach 
+Briefly show your high-level design diagram or approach from the proposal
+Threat Model 
+Remind what was your threat model
+Key Assumptions
+List your assumptions (1-2 lines)
+
+
+3
+
+Mid-Term Deliverables (Status)
+Promised Deliverables 
+Status (Completed/InProgress/Delayed)
+4
+
+Work Completed & Implementation Details
+Hardware Setup:
+(e.g., "Used Raspberry Pi 4 as AP,  laptop’s Wi-Fi for attack")
+Add a diagram or pic of your setup
+Software & Tools:
+(e.g., "Using hostapd/openWRT for rogue AP, Scapy for de-auth packets")
+Implementation:
+(Walk-through the key code snippets, configurations, or scripts you have written by showing your GitHub repo)
+5
+This is the most important section. Show what you've done.
+5
+
+Experimental Setup
+Setup
+(define your setup for experiments, scenarios created)
+Metrics used for Analysis
+(e.g., Success of handshake capture, time-to-crack, etc)
+Baseline(s) for Comparison
+(give reference links or mention classical schemes)
+
+
+
+6
+
+Preliminary Results
+(Use plots, tables, or screenshots)
+
+7
+
+Live Demo
+(This slide is a placeholder to switch to your live demo)
+Even a short, 1-2 minute demo of your attack/defense script running is very powerful 
+(Live demo or play a recorded clip)
+
+8
+
+Challenges & Risks Encountered
+Original Risks (from original proposal)
+Challenges Faced
+Mitigation
+(How did you solve it?)
+9
+
+Updated Timelines & Next Steps
+Timeline
+(Show your original timeline, but mark tasks as "Completed" or "In Progress")
+
+Work Remaining for Final Deliverable (Nov 24)
+
+Work Distribution (if changed)
+
+
+10
+
+References
+GitHub Repo Link: [Your-Repo-Link-Here] 
+(add References)
+
+
+
+
+11
+
+11
