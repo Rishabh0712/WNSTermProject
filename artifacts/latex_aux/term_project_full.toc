@@ -1,0 +1,83 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Problem Statement}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Motivation}{4}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Key Objectives}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2}Threat Model and Assumptions}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Threat Model}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Adversary Profile}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Attack Scenarios}{5}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Attack Surface Analysis}{6}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Key Assumptions}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Network Infrastructure Assumptions}{6}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Cryptographic Assumptions}{6}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Operational Assumptions}{7}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Trust Assumptions}{7}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Out-of-Scope Threats}{7}{subsubsection.2.2.5}%
+\contentsline {section}{\numberline {3}System Architecture \& Methodology}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}High-Level Design}{7}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}5G Network Architecture}{8}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Multi-Party Authorization Framework}{8}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}System Block Diagram}{9}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Core Modules}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}5G Network Simulation Module}{9}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Vulnerability Demonstration Module}{10}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Shamir's Secret Sharing Module}{10}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Multi-Party TLS Module}{11}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Secure Logging Module}{11}{subsubsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.3}Shamir's Secret Sharing: Mathematical Foundation}{11}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Overview}{12}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Mathematical Basis: Polynomial Interpolation}{12}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Secret Splitting Algorithm}{12}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Secret Reconstruction Algorithm (Lagrange Interpolation)}{13}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.5}Modular Arithmetic Operations}{13}{subsubsection.3.3.5}%
+\contentsline {subsubsection}{\numberline {3.3.6}Security Properties}{14}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Implementation in Our System}{14}{subsubsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.4}Technical Approach}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Layer 1: 5G Vulnerability Demonstration}{15}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Layer 2: Core Cryptographic Implementation}{15}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Layer 3: Application to TLS}{15}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Layer 4: 5G Integration (Architectural)}{15}{subsubsection.3.4.4}%
+\contentsline {section}{\numberline {4}Implementation Details}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hardware Setup}{15}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Development Platform}{16}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Containerization Infrastructure}{16}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.3}Network Topology}{16}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Software Stack}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}5G Network Simulation}{16}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Cryptographic Implementation}{17}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Vulnerability Demonstration}{18}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}Secure Logging Infrastructure}{18}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}Development Tools}{18}{subsubsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.3}Key Algorithms and Logic}{18}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Algorithm 1: RSA Private Key Splitting}{18}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Algorithm 2: Collaborative Key Reconstruction and Decryption}{19}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Algorithm 3: Shamir's Secret Sharing - Core Functions}{20}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Logic Flow: Complete TLS Handshake}{22}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Code Structure}{22}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Repository Structure}{22}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Key Source Files}{24}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Compilation and Execution}{24}{subsubsection.4.4.3}%
+\contentsline {subsubsection}{\numberline {4.4.4}Code Organization Philosophy}{25}{subsubsection.4.4.4}%
+\contentsline {section}{\numberline {5}Results and Analysis}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Experimental Setup}{25}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Testbed Environment}{25}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Test Scenarios}{26}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Metrics and Baselines}{27}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Quantitative Results}{27}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}5G Network Deployment Results}{27}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Multi-Party TLS Performance Results}{27}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}Chunk Reconstruction Accuracy}{28}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}Security Analysis Results}{29}{subsubsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.3}Analysis}{29}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}5G Vulnerability Analysis}{29}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Cryptographic Performance Analysis}{30}{subsubsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3}Correctness Verification Analysis}{30}{subsubsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.4}Security Property Verification}{31}{subsubsection.5.3.4}%
+\contentsline {subsection}{\numberline {5.4}Comparison with Objectives}{31}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Objective 1: Multi-Party Authorization Framework}{31}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Objective 2: Core Cryptographic Primitive Validation}{32}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.3}Objective 3: 5G Integration and Performance Validation}{32}{subsubsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.5}Future Work}{33}{subsection.5.5}%
+\contentsline {section}{\numberline {6}References}{33}{section.6}%
+\contentsline {subsection}{\numberline {6.1}GitHub Repository}{33}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Bibliography}{33}{subsection.6.2}%

@@ -1,0 +1,29 @@
+# Commands to fix rsyslog in AMF-2 container
+# Run these commands in WSL terminal
+
+# 1. Stop any running rsyslog processes
+sudo docker exec rfsim5g-oai-amf-2 pkill -9 rsyslogd
+
+# 2. Remove stale PID file
+sudo docker exec rfsim5g-oai-amf-2 rm -f /run/rsyslogd.pid
+
+# 3. Create container-friendly rsyslog config (disables kernel logging)
+sudo docker exec rfsim5g-oai-amf-2 bash -c 'cat > /etc/rsyslog.d/00-container.conf << EOF
+# Disable kernel logging in container
+\$ModLoad imuxsock
+EOF'
+
+# 4. Comment out imklog from main config
+sudo docker exec rfsim5g-oai-amf-2 bash -c 'sed -i "/imklog/s/^/#/" /etc/rsyslog.conf'
+
+# 5. Start rsyslog in foreground mode (for testing)
+sudo docker exec rfsim5g-oai-amf-2 rsyslogd -n -f /etc/rsyslog.conf
+
+# Alternative: Start in background
+# sudo docker exec -d rfsim5g-oai-amf-2 rsyslogd
+
+# 6. Verify rsyslog is running
+sudo docker exec rfsim5g-oai-amf-2 ps aux | grep rsyslog
+
+# 7. Check for errors
+sudo docker exec rfsim5g-oai-amf-2 tail -20 /var/log/messages

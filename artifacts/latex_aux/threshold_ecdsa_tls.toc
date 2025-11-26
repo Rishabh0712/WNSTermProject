@@ -1,0 +1,61 @@
+\contentsline {section}{\numberline {1}Executive Summary}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}What is Threshold Cryptography?}{3}{subsection.1.1}%
+\contentsline {paragraph}{Key Properties:}{3}{section*.2}%
+\contentsline {paragraph}{Why Threshold ECDSA for TLS?}{3}{section*.3}%
+\contentsline {paragraph}{Trustless Setup (DKG):}{3}{section*.4}%
+\contentsline {section}{\numberline {2}Objectives}{4}{section.2}%
+\contentsline {section}{\numberline {3}Scope and Non-Goals}{4}{section.3}%
+\contentsline {section}{\numberline {4}Stakeholders}{4}{section.4}%
+\contentsline {section}{\numberline {5}Background and Motivation}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}The Problem with Centralized Private Keys}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Threshold Cryptography as a Solution}{4}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Fast Variants and Trustless Setup}{5}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Requirements}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Functional}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Security}{5}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Performance}{5}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Operational}{5}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Threat Model}{5}{section.7}%
+\contentsline {section}{\numberline {8}Architecture Overview}{6}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Components}{6}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Data Flow Summary}{6}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Cryptographic Protocol Details}{6}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Distributed Key Generation}{6}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Precomputation}{6}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Signing}{6}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Share Refresh}{6}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Misbehavior Detection}{6}{subsection.9.5}%
+\contentsline {section}{\numberline {10}TLS 1.3 Integration Points}{6}{section.10}%
+\contentsline {paragraph}{Implementation Hook:}{7}{section*.6}%
+\contentsline {section}{\numberline {11}Operational Workflow}{7}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Lifecycle Phases}{7}{subsection.11.1}%
+\contentsline {section}{\numberline {12}High Availability}{7}{section.12}%
+\contentsline {section}{\numberline {13}Performance Considerations}{8}{section.13}%
+\contentsline {section}{\numberline {14}API Contract (Draft)}{8}{section.14}%
+\contentsline {section}{\numberline {15}Logging and Audit}{8}{section.15}%
+\contentsline {section}{\numberline {16}Security Analysis Summary}{8}{section.16}%
+\contentsline {section}{\numberline {17}Testing and Validation}{8}{section.17}%
+\contentsline {section}{\numberline {18}Implementation Phases}{9}{section.18}%
+\contentsline {section}{\numberline {19}Risk and Mitigation}{9}{section.19}%
+\contentsline {section}{\numberline {20}Future Extensions}{9}{section.20}%
+\contentsline {section}{\numberline {21}Compliance and Governance}{9}{section.21}%
+\contentsline {section}{\numberline {22}Deployment Model}{9}{section.22}%
+\contentsline {section}{\numberline {23}Open Questions}{9}{section.23}%
+\contentsline {section}{\numberline {24}Acceptance Criteria}{10}{section.24}%
+\contentsline {section}{\numberline {25}Summary}{10}{section.25}%
+\contentsline {section}{\numberline {26}Detailed TLS 1.3 Handshake Workflow (Threshold Integration)}{10}{section.26}%
+\contentsline {subsection}{\numberline {26.1}Legend}{10}{subsection.26.1}%
+\contentsline {subsection}{\numberline {26.2}Pre-Handshake Preparation}{10}{subsection.26.2}%
+\contentsline {subsection}{\numberline {26.3}Standard Phases}{10}{subsection.26.3}%
+\contentsline {subsection}{\numberline {26.4}Happy Path Step-by-Step}{10}{subsection.26.4}%
+\contentsline {subsection}{\numberline {26.5}Failure Paths}{11}{subsection.26.5}%
+\contentsline {paragraph}{Insufficient Quorum:}{11}{section*.7}%
+\contentsline {paragraph}{Precompute Depletion:}{11}{section*.8}%
+\contentsline {paragraph}{Invalid Partial:}{11}{section*.9}%
+\contentsline {paragraph}{Coordinator Failure:}{11}{section*.10}%
+\contentsline {paragraph}{Client Abort:}{11}{section*.11}%
+\contentsline {subsection}{\numberline {26.6}Security Checks During Signing}{11}{subsection.26.6}%
+\contentsline {subsection}{\numberline {26.7}Complete TLS 1.3 Handshake with Threshold Signing (Illustrated)}{11}{subsection.26.7}%
+\contentsline {subsection}{\numberline {26.8}Latency Budget (Illustrative)}{11}{subsection.26.8}%
+\contentsline {subsection}{\numberline {26.9}Monitoring Metrics}{11}{subsection.26.9}%
+\contentsline {section}{\numberline {27}References}{12}{section.27}%

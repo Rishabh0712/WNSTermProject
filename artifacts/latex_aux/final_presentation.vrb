@@ -1,0 +1,35 @@
+\frametitle{Execution Results}
+\begin{lstlisting}[basicstyle=\scriptsize\ttfamily]
+=== Phase 1: Server Setup with Distributed Key ===
+Generated RSA-2048 key pair in 187.623 ms
+Private exponent: 2046 bits, split into 34 chunks
+Shares distributed to 5 parties (170 total shares)
+
+Party Details:
+- Security Officer 1: 34 shares
+- Security Officer 2: 34 shares
+- Security Officer 3: 34 shares
+- Backup Officer 1: 34 shares
+- Backup Officer 2: 34 shares
+
+=== Phase 2: Client Initiates TLS Handshake ===
+Generated 48-byte Pre-Master Secret
+Encrypted with server's public key (256 bytes ciphertext)
+
+=== Phase 3: Collaborative Decryption ===
+Participating parties: Security Officer 1, Security Officer 3, Backup Officer 2
+Reconstructed private key: 2074 bits
+Successfully decrypted Pre-Master Secret
+
+=== Phase 4: Verification ===
+*** SUCCESS *** Decrypted Pre-Master Secret MATCHES original!
+
+Complete TLS Handshake Flow:
+  1. Server private key split into 5 shares
+  2. Client encrypted PMS with server's public key
+  3. 3 parties collaborated to reconstruct private key
+  4. Pre-Master Secret decrypted
+  5. Private key immediately destroyed
+  6. Both sides can now derive Master Secret
+  7. Secure session established!
+\end{lstlisting}

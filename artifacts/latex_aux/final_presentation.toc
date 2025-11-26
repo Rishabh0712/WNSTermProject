@@ -1,0 +1,11 @@
+\beamer@sectionintoc {1}{Introduction \& Project Overview}{3}{0}{1}
+\beamer@sectionintoc {2}{Methodology \& Architecture}{5}{0}{2}
+\beamer@sectionintoc {3}{Implementation Details}{9}{0}{3}
+\beamer@sectionintoc {4}{Experimental Setup \& Results}{14}{0}{4}
+\beamer@sectionintoc {5}{Preliminary Results}{19}{0}{5}
+\beamer@sectionintoc {6}{Challenges \& Solutions}{20}{0}{6}
+\beamer@sectionintoc {7}{Live Demonstration}{22}{0}{7}
+\beamer@sectionintoc {8}{Code \& Documentation}{23}{0}{8}
+\beamer@sectionintoc {9}{Timeline \& Work Distribution}{24}{0}{9}
+\beamer@sectionintoc {10}{Future Work}{25}{0}{10}
+\beamer@sectionintoc {11}{Conclusion}{27}{0}{11}

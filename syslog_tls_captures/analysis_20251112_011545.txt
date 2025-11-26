@@ -1,0 +1,25 @@
+==========================================
+TLS Syslog Capture Analysis Report
+==========================================
+
+Capture Details:
+  Date: Wed Nov 12 01:16:15 UTC 2025
+  Interface: any
+  Port: 6514
+  Duration: 30 seconds
+  Total Packets: 1
+
+Files:
+  PCAP: ./syslog_tls_captures/syslog_tls_20251112_011545.pcap
+
+==========================================
+Detailed Packet List
+==========================================
+reading from file ./syslog_tls_captures/syslog_tls_20251112_011545.pcap, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144
+Warning: interface names might be incorrect
+
+==========================================
+Full Packet Hex Dump (First 5 packets)
+==========================================
+reading from file ./syslog_tls_captures/syslog_tls_20251112_011545.pcap, link-type LINUX_SLL2 (Linux cooked v2), snapshot length 262144
+Warning: interface names might be incorrect

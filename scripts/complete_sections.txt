@@ -1,0 +1,89 @@
+
+\section{Project Management \& AI Usage}
+
+\subsection{Work Distribution}
+
+This is an individual project completed by a single team member.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|p{8cm}|}
+\hline
+\textbf{Team Member} & \textbf{Core Responsibility} & \textbf{Key Tasks \& Contributions} \\
+\hline
+Rishabh Kumar & Full Project Implementation & 
+\begin{itemize}
+    \item 5G network deployment using OpenAirInterface
+    \item Vulnerability demonstration with Python script
+    \item Shamir's Secret Sharing implementation in C++
+    \item Multi-party TLS handshake implementation
+    \item Performance testing and analysis
+    \item Documentation and presentations
+\end{itemize} \\
+\hline
+\end{tabular}
+\caption{Work distribution}
+\end{table}
+
+\subsection{Leveraging LLMs (AI Usage Declaration)}
+
+AI tools were used throughout this project to accelerate development and documentation:
+
+\textbf{Code Assistance:}
+\begin{itemize}
+    \item \textbf{ChatGPT/GitHub Copilot:} Used for debugging OpenSSL BIGNUM operations, particularly modular arithmetic and memory management
+    \item \textbf{Boilerplate Code:} Generated initial structure for RSA key handling and Lagrange interpolation loops
+    \item \textbf{Bug Fixing:} Assisted in resolving segmentation faults related to BIGNUM operations
+\end{itemize}
+
+\textbf{Documentation:}
+\begin{itemize}
+    \item Used AI to draft initial LaTeX structure for presentations and reports
+    \item Generated mathematical notation formatting
+    \item Assisted in converting technical notes to formal academic writing style
+\end{itemize}
+
+\textbf{Impact:}
+\begin{itemize}
+    \item \textbf{Positive:} Accelerated development by 30-40\%
+    \item \textbf{Corrections Required:} AI-generated code for modular inverse initially incorrect; manually corrected
+    \item \textbf{Verification:} All AI-generated code was manually reviewed and validated
+\end{itemize}
+
+\section{Conclusion and Future Work}
+
+\subsection{Summary}
+
+This project successfully demonstrated a critical privacy vulnerability in 5G positioning systems and proposed a cryptographic solution using multi-party threshold cryptography. We implemented a complete proof-of-concept system combining a 5G network simulation with Shamir's Secret Sharing-based authorization, achieving 100\% correctness with only 10-15\% performance overhead. The core cryptographic framework eliminates single points of failure in location data access, requiring collaboration of at least 3 out of 5 independent parties.
+
+\subsection{Future Work}
+
+Future enhancements would include:
+
+\begin{enumerate}
+    \item \textbf{End-to-End 5G Integration:} Modify OpenAirInterface AMF/LMF source code to integrate threshold authorization with distributed parties
+    \item \textbf{Advanced Positioning:} Implement OTDOA and Multi-RTT for sub-meter accuracy
+    \item \textbf{Post-Quantum Cryptography:} Replace RSA with lattice-based schemes (CRYSTALS-KYBER)
+    \item \textbf{Performance Optimizations:} Parallelize chunk reconstruction, reduce overhead to $<$5ms
+    \item \textbf{Production Deployment:} Kubernetes orchestration, load balancing, security audits
+    \item \textbf{Standards Contribution:} Submit proposal to 3GPP SA3 Working Group
+\end{enumerate}
+
+\section{References}
+
+\subsection{GitHub Repository}
+
+\url{https://github.com/Rishabh0712/WNSTermProject}
+
+\subsection{Bibliography}
+
+\begin{enumerate}
+    \item 3GPP TS 23.501: "System architecture for the 5G System"
+    \item 3GPP TS 38.305: "UE positioning in NG-RAN"
+    \item Shamir, Adi. "How to share a secret." \textit{Communications of the ACM} 22.11 (1979): 612-613
+    \item OpenAirInterface 5G Core: \url{https://openairinterface.org/}
+    \item OpenSSL Documentation: \url{https://www.openssl.org/docs/}
+    \item Dierks, T., Rescorla, E. "TLS Protocol Version 1.2." RFC 5246, 2008
+\end{enumerate}
+
+\end{document}

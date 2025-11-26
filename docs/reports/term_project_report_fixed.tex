@@ -1,0 +1,75 @@
+﻿section{Introduction}
+Team Members:
+* [Name 1] (Roll No: [ ])
+* [Name 2] (Roll No: [ ])
+* [Name 3] (Roll No: [ ])
+
+
+\section{Introduction}
+
+\subsection{Problem Statement}
+
+Current 5G positioning systems process location data in plaintext through centralized Location Management Functions (LMF), enabling potential mass surveillance without authorization controls or privacy protections. In traditional deployments, a single entity (AMF/LMF operator or administrator) can authorize and decrypt location requests, creating a single point of failure with no cryptographic multi-party authorization framework.
+
+This project addresses the fundamental vulnerability where unauthorized access to UE (User Equipment) location can occur via AMF logs without any authentication or authorization mechanism. Our research demonstrates this vulnerability through a proof-of-concept implementation using OpenAirInterface 5G Core and proposes a cryptographic solution using threshold cryptography to prevent unauthorized mass surveillance in 5G networks.
+
+\subsection{Motivation}
+
+The security impact of this vulnerability is severe and has significant real-world implications. With 5G networks capable of sub-meter positioning accuracy using techniques like OTDOA (Observed Time Difference of Arrival) and Multi-RTT (Multi-Round Trip Time), unauthorized access to location data enables mass surveillance and movement profiling of individuals. Rogue government agencies or compromised network operators could exploit compromised AMF credentials to conduct bulk location requests without oversight or accountability.
+
+A cryptographic solution is necessary because traditional access control mechanisms (passwords, role-based access control) are insufficient against insider threats and compromised administrators. The solution must enforce separation of duties through threshold cryptography, requiring multiple independent parties to collaborate before any location request can be authorized or decrypted. This approach provides information-theoretic security guarantees based on Shamir's Secret Sharing and prevents single-party abuse while maintaining operational efficiency for legitimate use cases. The cryptographic primitive is generalizable beyond 5G positioning to any scenario requiring multi-party authorization, including enterprise PKI, financial transaction approvals, and classified data access.
+
+\subsection{Key Objectives}
+
+The primary objectives of this project, as proposed at the start of the term, are:
+
+\begin{itemize}
+    \item \textbf{Objective 1: Multi-Party Authorization Framework} \\
+    Design and implement a cryptographic multi-party authorization framework for 5G positioning systems using Shamir's Secret Sharing with a $(3,5)$-threshold scheme, requiring collaboration of at least 3 out of 5 independent parties to authorize location requests. The five authorization parties include: Judicial Authority, Law Enforcement Agency, Network Operator Security Officer, Privacy Oversight Officer, and Independent Auditor.
+    
+    \item \textbf{Objective 2: Core Cryptographic Primitive Validation} \\
+    Demonstrate the core cryptographic primitive through a practical implementation domain (Multi-Party Threshold TLS) that validates the threshold cryptography mechanism with RSA-2048 distributed private key management and complete TLS 1.2 handshake simulation, ensuring correct Pre-Master Secret decryption through collaborative key reconstruction.
+    
+    \item \textbf{Objective 3: 5G Integration and Performance Validation} \\
+    Integrate the validated cryptographic framework into a 5G network architecture using OpenAirInterface to prevent unauthorized UE location access, ensuring positioning accuracy $\leq$ 3m with authorization latency $<$ 5 minutes and cryptographic overhead $<$ 15\%, demonstrating feasibility for real-world deployment in 3GPP-compliant networks.
+\end{itemize}
+\section{Threat Model and Assumptions}
+
+\subsection{Threat Model}
+
+Our threat model addresses privacy and security vulnerabilities in 5G positioning systems, focusing on unauthorized access to UE location data through compromised network infrastructure.
+
+\subsubsection{Adversary Profile}
+
+\textbf{Adversary Type:} The primary adversary is a \textit{privileged insider} with administrative access to 5G core network components. This includes:
+\begin{itemize}
+    \item Rogue government agencies with legal or extralegal authority
+    \item Compromised network operators or administrators
+    \item Malicious insiders within telecommunications companies
+    \item Nation-state actors with infrastructure access
+\end{itemize}
+
+\textbf{Adversary Capabilities:}
+\begin{itemize}
+    \item \textit{Infrastructure Access:} Full administrative access to AMF/LMF containers and logs
+    \item \textit{Credential Compromise:} Ability to use stolen or legitimate administrator credentials
+    \item \textit{Active Attacks:} Can inject malicious location requests or extract data from live systems
+    \item \textit{Bulk Operations:} Capability to conduct mass surveillance through automated bulk location queries
+    \item \textit{Limited Coalition:} Can compromise fewer than $t$ authorization parties (e.g., $<$ 3 in our $(3,5)$-threshold scheme)
+\end{itemize}
+
+\textbf{Adversary Goals:}
+\begin{itemize}
+    \item Unauthorized tracking of individual UE movements without judicial oversight
+    \item Mass surveillance of population movements for profiling and intelligence gathering
+    \item Movement pattern analysis for predictive modeling
+    \item Real-time location tracking for targeting specific individuals
+\end{itemize}
+
+\subsubsection{Attack Scenarios}
+
+\textbf{Scenario 1: Unauthorized AMF Log Access}
+\begin{itemize}
+    \item \textit{Method:} Direct access to AMF container logs without authorization
+    \item \textit{Proof-of-Concept:} Demonstrated using \texttt{ue\_location\_service.py} to extract UE location (Cell ID, gNB, TAC, PLMN) from AMF logs bypassing any authentication
+    \item \textit{Impact:} Anyone with Docker/AMF access can track UE movements in real-time

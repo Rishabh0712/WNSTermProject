@@ -1,0 +1,126 @@
+Project TitleFinal
+Names & RollNos of Team Members
+
+ID=d924773e-9a16-4d6d-9803-8cb819e99682Recipe=text_billboardType=TextOnlyVariant=0FamilyID=AccentBoxWalbaum_Zero
+1
+
+Project Recap (Brief)
+Problem statement
+Briefly restate the problem you are solving (1-2 lines)
+Motivation
+Why this matters (security impact)
+Key Objectives
+List the 2-3 main objectives you proposed.
+
+2
+
+Threat Model (Brief)
+Threat Model 
+Describe what was your threat 
+Briefly restate the specific attacker capabilities (e.g., Insider vs. Outsider, Active vs. Passive) 
+Key Assumptions
+List your assumptions (1-2 lines)
+
+
+3
+3
+
+Final System Architecture/Methodology
+High-level Design
+Show final block diagram of your system (Attack/Defense setup)
+Highlight the core modules
+
+
+4
+4
+
+Implementation Details
+Hardware Setup:
+(e.g., "Used Raspberry Pi 4 as AP,  laptop’s Wi-Fi for attack")
+Add a diagram or pic of your setup
+Software Stack:
+Key libraries/tools used or developed as part of this project (e.g., "Using hostapd/openWRT for rogue AP, Scapy for de-auth packets")
+Implementation:
+(Walk-through the key code snippets, configurations, or scripts you have written by showing your GitHub repo)
+5
+This is the most important section. Show what you've done.
+5
+
+Key Algorithm/Logic 
+Pseudo-code or flowchart of the most critical part of your solution
+6
+6
+
+Experimental Setup
+Testbed/PoC
+(describe your environment for experiments)
+Scenarios
+List the specific scenarios tested 
+Metrics used for Analysis
+(e.g., Success of handshake capture, time-to-crack, etc)
+Baseline(s) for Comparison
+(give reference links or mention classical schemes)
+
+
+
+7
+
+Results & Analysis
+Quantitative Results
+Use plots, tables
+Analysis
+Don't just show numbers; explain why they look like that
+
+
+8
+8
+
+Comparison with Objectives
+Objective 1
+Status (Completed/Partially Completed, Infeasible, etc)
+9
+
+Live Demo
+Scenario: Briefly describe what you are about to show in the live demo.
+(Switch to Live Demo / Show Backup Video here)
+
+10
+10
+
+Work Distribution
+
+
+11
+Name
+Core Responsibility
+Key Tasks & Contributions
+
+Leveraging LLMs (AI Usage)
+Code Assistance & Debugging
+(Used [LLM Name] to debug …)
+Tell where it helped or wasted your time!
+Generated boilerplate code for ….
+
+Documentation & Reporting
+(how you leveraged LLMs for report and ppt?)
+12
+12
+
+Conclusions 
+Summary
+(2-3 lines wrapping up the project impact)
+Future Work
+If you had another semester, what would you add? 
+13
+13
+
+References
+GitHub Repo Link: [Your-Repo-Link-Here] 
+(add References)
+
+
+
+
+14
+
+14

@@ -1,0 +1,498 @@
+{
+  "imsi": "208990100001100",
+  "total_events": 46,
+  "unique_gnbs": 2,
+  "first_event": "2025-11-10 17:01:48.548",
+  "last_event": "2025-11-26 15:50:17.591",
+  "event_types": [
+    "registration"
+  ],
+  "gnb_connections": [
+    {
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "first_seen": "2025-11-10 17:01:48.548",
+      "last_seen": "2025-11-26 15:50:07.564",
+      "event_count": 36,
+      "event_types": [
+        "registration"
+      ]
+    },
+    {
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "first_seen": "2025-11-10 17:01:58.588",
+      "last_seen": "2025-11-26 15:50:17.591",
+      "event_count": 10,
+      "event_types": [
+        "registration"
+      ]
+    }
+  ],
+  "movement_events": [
+    {
+      "timestamp": "2025-11-10 17:01:48.548",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-10 17:01:48.548",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-10 17:01:58.588",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-10 18:30:10.892",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-10 18:30:10.892",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-10 18:30:20.926",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:12:09.378",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:12:09.378",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:12:09.378",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:12:09.379",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:12:19.439",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:19:49.021",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:23:11.532",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:23:11.532",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:23:31.275",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:23:31.275",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:23:41.305",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:25:09.881",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:41:01.800",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:41:01.800",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:41:11.837",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:43:25.431",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:43:25.431",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:43:25.431",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:43:25.431",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:43:35.476",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:58:48.959",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:58:48.959",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 00:58:59.007",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:03:01.998",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:03:01.998",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:24:27.670",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:24:27.670",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:24:37.703",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:30:38.224",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:30:38.224",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-12 01:30:48.262",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:46:23.287",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:46:23.287",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:47:23.151",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:47:23.151",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:47:33.178",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:49:58.331",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:50:07.564",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:50:07.564",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": "|",
+      "cell_id": "|",
+      "tac": null,
+      "ran_ue_ngap_id": null
+    },
+    {
+      "timestamp": "2025-11-26 15:50:17.591",
+      "event_type": "registration",
+      "imsi": "208990100001100",
+      "gnb_id": null,
+      "gnb_name": null,
+      "cell_id": "\"0000e014e\",\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"}},\"tai\":{\"plmnId\":{\"mcc\":\"208\",\"mnc\":\"99\"},\"tac\":\"1\"}}}}",
+      "tac": "\"1\"}}}}",
+      "ran_ue_ngap_id": null
+    }
+  ]
+}
