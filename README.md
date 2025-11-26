@@ -553,7 +553,7 @@ sudo docker logs rfsim5g-oai-nr-ue
 ## 🎓 Academic Context
 
 **Course**: WNS (Wireless and Network Security)  
-**Institution**: IIIT Hyderabad  
+**Institution**: IIT Hyderabad  
 **Semester**: 2025  
 **Student**: Rishabh Kumar (cs25resch04002)  
 
@@ -566,24 +566,8 @@ sudo docker logs rfsim5g-oai-nr-ue
 
 ---
 
-## 🔬 Research Contributions
-
-1. **Threshold Cryptography for TLS**: Novel application of Shamir's Secret Sharing to protect TLS server keys
-2. **5G Logging Security**: Distributed trust model for critical infrastructure logging
-3. **Standards Compatibility**: Maintains RFC 5425 compliance without protocol modifications
-4. **Information-Theoretic Security**: Provides perfect secrecy independent of computational resources
-
----
-
 ## 🌟 Future Work
 
-### Short-term Enhancements
-- [ ] HSM integration for secure share storage
-- [ ] Automated key rotation with threshold protection
-- [ ] Web dashboard for party authorization
-- [ ] Real-time monitoring of multi-party operations
-
-### Long-term Research
 - [ ] Extend to other 5G components (SMF, UPF, gNB)
 - [ ] Dynamic threshold adjustment based on threat level
 - [ ] Integration with SIEM systems
@@ -615,28 +599,10 @@ sudo docker logs rfsim5g-oai-nr-ue
 
 **Rishabh Kumar**  
 Roll Number: cs25resch04002  
-Email: kumarrishabh73@gmail.com | rishabh.kumar@research.iiit.ac.in  
+Email: kumarrishabh73@gmail.com | cs25resch04002@iith.ac.in
 GitHub: [@Rishabh0712](https://github.com/Rishabh0712)  
 Repository: [WNSTermProject](https://github.com/Rishabh0712/WNSTermProject)
 
----
-
-## 🙏 Acknowledgments
-
-- **OpenAirInterface Software Alliance** - For the 5G simulation framework
-- **IIIT Hyderabad** - For academic support and resources
-- **WNS Course Faculty** - For guidance throughout the project
-- **3GPP** - For 5G specifications and standards
-- **OpenSSL Community** - For cryptographic libraries
-
----
-
-## 📄 License
-
-This project is submitted as part of academic coursework at IIIT Hyderabad.  
-All rights reserved. Contact author for usage permissions.
-
----
 
 ## 🔗 Related Links
 
@@ -645,14 +611,6 @@ All rights reserved. Contact author for usage permissions.
 - [RFC 5425 - TLS Transport for Syslog](https://datatracker.ietf.org/doc/html/rfc5425)
 - [Shamir's Secret Sharing](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing)
 - [Docker Documentation](https://docs.docker.com/)
-
----
-
-## ⭐ Project Status
-
-**Status**: ✅ **COMPLETE AND VERIFIED**  
-**Last Updated**: November 26, 2025  
-**Version**: 1.0.0  
 
 ---
 
