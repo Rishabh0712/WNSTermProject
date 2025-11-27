@@ -8,6 +8,12 @@
 \usepackage{amsmath}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% Define checkmark and cross symbols
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 
 % Code listing settings
 \lstset{
@@ -44,7 +50,7 @@
 % Section 1: Introduction
 \section{Introduction \& Project Overview}
 
-\begin{frame}{Project Overview (Review)}
+\begin{frame}{Project Overview - Part 1: Problem Statement}
     \textbf{Problem Statement}
     \begin{itemize}
         \item \textbf{Original 5G Problem:} Current 5G positioning systems process location data in plaintext through centralized Location Management Functions (LMF), enabling potential mass surveillance without authorization controls or privacy protections
@@ -53,7 +59,7 @@
         \item \textbf{Demonstrated Vulnerability:} Unauthorized access to UE location via AMF logs without any authentication
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Key Objectives}
     \begin{enumerate}
@@ -62,14 +68,24 @@
         \item Require $t$ out of $n$ independent parties to authorize location requests
         \item Demonstrate cryptographic primitive with TLS as practical application domain
     \end{enumerate}
-    
-    \vspace{0.3cm}
-    
+\end{frame}
+
+\begin{frame}{Project Overview - Part 2: Success Metrics}
     \textbf{Success Metrics}
     \begin{itemize}
         \item \textbf{5G Target:} Positioning Accuracy $\leq$ 3m, Authorization Latency $<$ 5 minutes
         \item \textbf{Crypto Implementation:} $(3,5)$-threshold scheme, overhead $<$15\%
         \item Security: $<$3 parties learn nothing about private key/authorization secret
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Implementation Approach}
+    \begin{itemize}
+        \item \textbf{Phase 1:} Build cryptographic primitive (Shamir's Secret Sharing)
+        \item \textbf{Phase 2:} Apply to practical domain (TLS encryption)
+        \item \textbf{Phase 3:} Integrate with 5G infrastructure (OpenAirInterface)
+        \item \textbf{Validation:} End-to-end testing with multi-party authorization
     \end{itemize}
 \end{frame}
 
@@ -105,21 +121,13 @@
             \item Performance: $\sim$11-13ms overhead
             \item Security: Information-theoretic guarantee
         \end{itemize}
-        
-        \vspace{0.3cm}
-        \textbf{5G Authorization Application:}
-        \begin{itemize}
-            \item Same cryptographic primitive applies to LMF authorization
-            \item 5 parties: Judicial, Law Enforcement, Network Security, Privacy Officer, Auditor
-            \item Require 3-of-5 approval to decrypt location requests
-        \end{itemize}
     \end{columns}
 \end{frame}
 
 % Section 2: Methodology
 \section{Methodology \& Architecture}
 
-\begin{frame}{Methodology \& Threat Model (Review)}
+\begin{frame}{Methodology - Part 1: Technical Approach}
     \textbf{Proposed Technical Approach}
     \begin{itemize}
         \item \textbf{5G Simulation:} OpenAirInterface core (AMF, SMF, UPF) with custom secure LMF
@@ -130,7 +138,7 @@
         \item \textbf{Validation Domain:} TLS handshake with distributed private key
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Threat Model}
     \begin{itemize}
@@ -139,15 +147,25 @@
         \item \textbf{Method:} Compromised AMF/LMF credentials, bulk location requests, movement profiling
         \item \textbf{Defense:} Threshold cryptography prevents single-party authorization/decryption
     \end{itemize}
-    
-    \vspace{0.3cm}
-    
+\end{frame}
+
+\begin{frame}{Methodology - Part 2: Assumptions \& Model}
     \textbf{Key Assumptions}
     \begin{itemize}
         \item 5G network infrastructure follows 3GPP standards (TS 38.305)
         \item Cryptographic primitives (threshold signatures, RSA-2048) are secure
         \item Judicial authorities and oversight parties maintain secure key management
         \item Shamir's Secret Sharing provides information-theoretic security ($<t$ parties learn nothing)
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Security Model}
+    \begin{itemize}
+        \item \textbf{Threshold:} $(3,5)$ - requires 3 out of 5 parties to authorize
+        \item \textbf{Information-Theoretic:} $<$3 parties learn nothing about the key
+        \item \textbf{Application Domain:} TLS 1.2 with distributed RSA-2048 private key
+        \item \textbf{Validation:} Complete handshake with collaborative decryption
     \end{itemize}
 \end{frame}
 
@@ -160,34 +178,30 @@
             % gNB
             \node[draw, rectangle, fill=cyan!20, minimum width=1.5cm, minimum height=0.8cm] (gnb) at (3,0) {gNB};
             
-            % AMF
+            % AMF with lock
             \node[draw, rectangle, fill=orange!20, minimum width=1.5cm, minimum height=0.8cm] (amf) at (6,0) {AMF};
-            
-            % LMF with lock
-            \node[draw, rectangle, fill=red!20, minimum width=1.5cm, minimum height=0.8cm] (lmf) at (9,0) {LMF};
-            \node[draw, circle, fill=yellow!40, minimum size=0.5cm] at (9.8, 0.5) {\tiny Lock};
+            \node[draw, circle, fill=yellow!40, minimum size=0.5cm] at (6.8, 0.5) {\tiny Lock};
             
             % Authorization Parties
-            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p1) at (12,2.5) {\tiny Judicial};
-            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p2) at (13.5,1.5) {\tiny Law Enf.};
-            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p3) at (12,0) {\tiny Net Sec};
-            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p4) at (13.5,-1.5) {\tiny Privacy};
-            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p5) at (12,-2.5) {\tiny Auditor};
+            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p1) at (9,2.5) {\tiny Judicial};
+            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p2) at (10.5,1.5) {\tiny Law Enf.};
+            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p3) at (9,0) {\tiny Net Sec};
+            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p4) at (10.5,-1.5) {\tiny Privacy};
+            \node[draw, circle, fill=green!20, minimum size=0.9cm] (p5) at (9,-2.5) {\tiny Auditor};
             
             % Flows
             \draw[->, thick] (ue) -- node[above] {\tiny Positioning} (gnb);
-            \draw[->, thick] (gnb) -- (amf);
-            \draw[->, thick] (amf) -- node[above] {\tiny Loc Req} (lmf);
+            \draw[->, thick] (gnb) -- node[above] {\tiny Loc Req} (amf);
             
             % Authorization
-            \draw[->, thick, dashed, red] (lmf) -- node[above, sloped] {\tiny Share 1} (p1);
-            \draw[->, thick, dashed, red] (lmf) -- node[above, sloped] {\tiny Share 2} (p2);
-            \draw[->, thick, dashed, red] (lmf) -- node[above] {\tiny Share 3} (p3);
-            \draw[->, thick, dashed, red] (lmf) -- node[below, sloped] {\tiny Share 4} (p4);
-            \draw[->, thick, dashed, red] (lmf) -- node[below, sloped] {\tiny Share 5} (p5);
+            \draw[->, thick, dashed, red] (amf) -- node[above, sloped] {\tiny Share 1} (p1);
+            \draw[->, thick, dashed, red] (amf) -- node[above, sloped] {\tiny Share 2} (p2);
+            \draw[->, thick, dashed, red] (amf) -- node[above] {\tiny Share 3} (p3);
+            \draw[->, thick, dashed, red] (amf) -- node[below, sloped] {\tiny Share 4} (p4);
+            \draw[->, thick, dashed, red] (amf) -- node[below, sloped] {\tiny Share 5} (p5);
             
             % Legend
-            \node[text width=4cm, align=left] at (3, -3) {\scriptsize \textbf{Setup:} LMF access key split into 5 shares};
+            \node[text width=4cm, align=left] at (3, -3) {\scriptsize \textbf{Setup:} AMF access key split into 5 shares};
             \node[text width=4cm, align=left] at (3, -3.5) {\scriptsize \textbf{Runtime:} Need 3-of-5 approval to decrypt location};
         \end{tikzpicture}
     \end{center}
@@ -421,7 +435,7 @@ std::vector<uint8_t> collaborativeDecrypt(
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Experimental Metrics \& Baseline}
+\begin{frame}{Experimental Metrics - Part 1: Evaluation Criteria}
     \textbf{Metrics Used for Analysis}
     \begin{itemize}
         \item \textbf{Correctness:} Pre-Master Secret verification (byte-by-byte comparison)
@@ -436,7 +450,7 @@ std::vector<uint8_t> collaborativeDecrypt(
         \item \textbf{Overhead:} Percentage increase vs traditional TLS handshake
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Baseline for Comparison}
     \begin{itemize}
@@ -444,18 +458,29 @@ std::vector<uint8_t> collaborativeDecrypt(
         \item TLS 1.2 handshake timing (RFC 5246 specifications)
         \item Typical production handshake: 50-100ms end-to-end
     \end{itemize}
-    
-    \vspace{0.3cm}
-    
+\end{frame}
+
+\begin{frame}{Experimental Metrics - Part 2: Test Setup}
     \textbf{Test Scenarios}
     \begin{enumerate}
         \item Single handshake with 3-of-5 parties (Officers 1, 3, Backup 2)
         \item Verification of successful PMS recovery
         \item Timing measurements for overhead calculation
     \end{enumerate}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Configuration Details}
+    \begin{itemize}
+        \item \textbf{Key Size:} RSA-2046 bits split into 34 chunks
+        \item \textbf{Threshold:} $(3,5)$ Shamir's Secret Sharing
+        \item \textbf{Parties:} Security Officers 1, 2, 3 + Backup Officers 1, 2
+        \item \textbf{Test Environment:} OpenSSL 3.0, C++17, WSL2 Ubuntu
+        \item \textbf{Validation:} Byte-by-byte Pre-Master Secret comparison
+    \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Execution Results}
+\begin{frame}[fragile]{Execution Results - Part 1: Server Setup \& Handshake}
 \begin{lstlisting}[basicstyle=\scriptsize\ttfamily]
 === Phase 1: Server Setup with Distributed Key ===
 Generated RSA-2048 key pair in 187.623 ms
@@ -472,7 +497,11 @@ Party Details:
 === Phase 2: Client Initiates TLS Handshake ===
 Generated 48-byte Pre-Master Secret
 Encrypted with server's public key (256 bytes ciphertext)
+\end{lstlisting}
+\end{frame}
 
+\begin{frame}[fragile]{Execution Results - Part 2: Collaborative Decryption \& Verification}
+\begin{lstlisting}[basicstyle=\scriptsize\ttfamily]
 === Phase 3: Collaborative Decryption ===
 Participating parties: Security Officer 1, Security Officer 3, Backup Officer 2
 Reconstructed private key: 2074 bits
@@ -531,11 +560,11 @@ Complete TLS Handshake Flow:
             \hline
             \textbf{Attack Scenario} & \textbf{Traditional TLS} & \textbf{Multi-Party TLS} \\
             \hline
-            Steal server private key & \textcolor{red}{✗ Full compromise} & \textcolor{green}{✓ Need t parties} \\
-            Insider threat (1 admin) & \textcolor{red}{✗ Full access} & \textcolor{green}{✓ Need t-1 more} \\
-            Server hack during handshake & \textcolor{red}{✗ Key stolen} & \textcolor{green}{✓ Key ephemeral} \\
-            Compromise $<$ t parties & N/A & \textcolor{green}{✓ Still secure} \\
-            Compromise $\geq$ t parties & N/A & \textcolor{red}{✗ Can decrypt} \\
+            Steal server private key & \textcolor{red}{\xmark{} Full compromise} & \textcolor{green}{\cmark{} Need t parties} \\
+            Insider threat (1 admin) & \textcolor{red}{\xmark{} Full access} & \textcolor{green}{\cmark{} Need t-1 more} \\
+            Server hack during handshake & \textcolor{red}{\xmark{} Key stolen} & \textcolor{green}{\cmark{} Key ephemeral} \\
+            Compromise $<$ t parties & N/A & \textcolor{green}{\cmark{} Still secure} \\
+            Compromise $\geq$ t parties & N/A & \textcolor{red}{\xmark{} Can decrypt} \\
             \hline
         \end{tabular}
     \end{table}
@@ -544,18 +573,18 @@ Complete TLS Handshake Flow:
     
     \textbf{Verified Security Properties:}
     \begin{itemize}
-        \item ✓ No single point of compromise
-        \item ✓ Threshold security (3-of-5) enforced
-        \item ✓ Private key exists only during decryption ($<$5ms)
-        \item ✓ Information-theoretic security (Shamir's SSS)
-        \item ✓ Correct Pre-Master Secret recovery
+        \item \cmark{} No single point of compromise
+        \item \cmark{} Threshold security (3-of-5) enforced
+        \item \cmark{} Private key exists only during decryption ($<$5ms)
+        \item \cmark{} Information-theoretic security (Shamir's SSS)
+        \item \cmark{} Correct Pre-Master Secret recovery
     \end{itemize}
 \end{frame}
 
 % Section 5: Challenges
 \section{Preliminary Results}
 
-\begin{frame}{Preliminary Results Summary}
+\begin{frame}{Preliminary Results - Part 1: Implementation Status}
     \textbf{Implementation Completed Successfully}
     \begin{itemize}
         \item All components compiled without errors (only deprecation warnings)
@@ -564,7 +593,7 @@ Complete TLS Handshake Flow:
         \item Pre-Master Secret verification: 100\% match
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Key Achievements}
     \begin{itemize}
@@ -573,15 +602,25 @@ Complete TLS Handshake Flow:
         \item \textbf{Phase 3 (Collaborative Decryption):} 3 parties reconstructed private key using Lagrange interpolation
         \item \textbf{Phase 4 (Verification):} Decrypted PMS matches original exactly (48/48 bytes)
     \end{itemize}
-    
-    \vspace{0.3cm}
-    
+\end{frame}
+
+\begin{frame}{Preliminary Results - Part 2: Security Validation}
     \textbf{Security Properties Validated}
     \begin{itemize}
         \item Private key exists only during decryption ($\sim$5ms window)
         \item Key immediately destroyed after use (BN\_clear\_free)
         \item No single entity has complete private key at any time
         \item Threshold property enforced: requires exactly 3+ parties
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Cryptographic Correctness}
+    \begin{itemize}
+        \item \textbf{Shamir's Secret Sharing:} Information-theoretic security verified
+        \item \textbf{RSA Decryption:} Correct PMS recovery with reconstructed key
+        \item \textbf{Lagrange Interpolation:} Accurate polynomial evaluation
+        \item \textbf{Memory Safety:} Proper cleanup of sensitive data
     \end{itemize}
 \end{frame}
 
@@ -626,11 +665,7 @@ Complete TLS Handshake Flow:
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{Design Challenges \& Solutions}
-    \textbf{Design Choices \& Architectural Decisions}
-    
-    \vspace{0.3cm}
-    
+\begin{frame}{Design Challenges - Part 1: Key Splitting \& Reconstruction}
     \textbf{Challenge 1: How to split RSA private key?}
     \begin{itemize}
         \item \textbf{Option A:} Split full 2048-bit number (requires very large prime)
@@ -638,7 +673,7 @@ Complete TLS Handshake Flow:
         \item \textbf{Chosen:} Option B - 34 chunks of 61 bits (manageable prime $2^{61}-1$)
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Challenge 2: When to reconstruct private key?}
     \begin{itemize}
@@ -646,23 +681,25 @@ Complete TLS Handshake Flow:
         \item \textbf{Option B:} Reconstruct for each handshake, destroy immediately
         \item \textbf{Chosen:} Option B - Ephemeral reconstruction for maximum security
     \end{itemize}
-    
-    \vspace{0.3cm}
-    
-    \textbf{Challenge 3: Implementation approach?}
+\end{frame}
+
+\begin{frame}{Design Challenges - Part 2: Architecture \& Implementation}
+    \textbf{Challenge 3: UE Location Service Architecture}
     \begin{itemize}
-        \item \textbf{Initial:} Complex 600-line implementation with extensive error handling → Segmentation faults
-        \item \textbf{Final:} Simplified 350-line focused implementation → Working prototype
-        \item \textbf{Lesson:} Start simple, validate core functionality, then add complexity
+        \item \textbf{Challenge:} Finalizing the architecture for UE location service and movement tracking
+        \item \textbf{Options Considered:} Custom LMF implementation vs AMF log-based approach
+        \item \textbf{Decision:} For simplicity, implemented AMF-based approach with log parsing
+        \item \textbf{Result:} Successfully extracted location data and tracked UE movement across gNBs
     \end{itemize}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Solutions Implemented}
     \begin{itemize}
         \item Modular design: Separate SSS, RSA, and TLS components
         \item Incremental testing: Isolated SSS verification before integration
         \item Proper memory management: BN\_clear\_free for sensitive data
+        \item AMF log parsing: Real-time location extraction and movement tracking
     \end{itemize}
 \end{frame}
 
@@ -759,7 +796,7 @@ Complete TLS Handshake Flow:
 
 \section{Future Work}
 
-\begin{frame}{Future Work: 5G Integration \& Extensions}
+\begin{frame}{Future Work - Part 1: 5G Integration \& Short-term Enhancements}
     \textbf{5G LMF Integration (Next Phase):}
     \begin{enumerate}
         \item Integrate threshold authorization with OpenAirInterface LMF
@@ -769,7 +806,7 @@ Complete TLS Handshake Flow:
         \item Real-world testing with multiple gNBs for OTDOA/Multi-RTT positioning
     \end{enumerate}
     
-    \vspace{0.3cm}
+    \vspace{0.5cm}
     
     \textbf{Short-term Cryptographic Enhancements:}
     \begin{itemize}
@@ -778,9 +815,9 @@ Complete TLS Handshake Flow:
         \item Byzantine fault tolerance for malicious parties
         \item Performance optimization for 5G latency requirements ($<$5 min authorization)
     \end{itemize}
-    
-    \vspace{0.3cm}
-    
+\end{frame}
+
+\begin{frame}{Future Work - Part 2: Long-term Research Directions}
     \textbf{Long-term Research Directions:}
     \begin{enumerate}
         \item \textbf{Distributed Key Generation (DKG):} No trusted dealer for initial setup
@@ -789,6 +826,16 @@ Complete TLS Handshake Flow:
         \item \textbf{Post-Quantum Security:} Lattice-based threshold schemes for 6G
         \item \textbf{Production Deployment:} 3GPP-compliant LMF with threshold authorization
     \end{enumerate}
+    
+    \vspace{0.5cm}
+    
+    \textbf{Production Considerations:}
+    \begin{itemize}
+        \item Scale to thousands of concurrent authorization requests
+        \item Integrate with existing 5G security infrastructure (SEAF, AUSF)
+        \item Compliance with 3GPP standards (TS 23.273, TS 33.501)
+        \item Real-world deployment in operational 5G networks
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Practical Applications}

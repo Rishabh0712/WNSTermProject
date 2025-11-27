@@ -47,6 +47,7 @@ void test_shamir_secret_sharing() {
     // Test reconstruction with exactly t shares
     std::cout << "\n--- Test 1a: Reconstruct with " << threshold << " shares ---" << std::endl;
     std::vector<ShamirSecretSharing::Share> subset1 = {shares[0], shares[1], shares[2]};
+    std::cout << "Using shares: [" << subset1[0].id << ", " << subset1[1].id << ", " << subset1[2].id << "]" << std::endl;
     uint64_t reconstructed1 = sss.reconstruct(subset1);
     std::cout << "Reconstructed secret: " << reconstructed1 << std::endl;
     assert(reconstructed1 == secret);
@@ -55,6 +56,7 @@ void test_shamir_secret_sharing() {
     // Test reconstruction with different t shares
     std::cout << "\n--- Test 1b: Reconstruct with different " << threshold << " shares ---" << std::endl;
     std::vector<ShamirSecretSharing::Share> subset2 = {shares[1], shares[3], shares[4]};
+    std::cout << "Using shares: [" << subset2[0].id << ", " << subset2[1].id << ", " << subset2[2].id << "]" << std::endl;
     uint64_t reconstructed2 = sss.reconstruct(subset2);
     std::cout << "Reconstructed secret: " << reconstructed2 << std::endl;
     assert(reconstructed2 == secret);
@@ -62,6 +64,12 @@ void test_shamir_secret_sharing() {
     
     // Test reconstruction with more than t shares
     std::cout << "\n--- Test 1c: Reconstruct with " << num_shares << " shares ---" << std::endl;
+    std::cout << "Using shares: [";
+    for (size_t i = 0; i < shares.size(); ++i) {
+        std::cout << shares[i].id;
+        if (i < shares.size() - 1) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
     uint64_t reconstructed3 = sss.reconstruct(shares);
     std::cout << "Reconstructed secret: " << reconstructed3 << std::endl;
     assert(reconstructed3 == secret);
@@ -69,8 +77,9 @@ void test_shamir_secret_sharing() {
     
     // Test failure with insufficient shares
     std::cout << "\n--- Test 1d: Fail with insufficient shares (t-1) ---" << std::endl;
+    std::vector<ShamirSecretSharing::Share> insufficient = {shares[0], shares[1]};
+    std::cout << "Using shares: [" << insufficient[0].id << ", " << insufficient[1].id << "]" << std::endl;
     try {
-        std::vector<ShamirSecretSharing::Share> insufficient = {shares[0], shares[1]};
         sss.reconstruct(insufficient);
         std::cout << "✗ Failed! Should have thrown exception." << std::endl;
     } catch (const std::exception& e) {
@@ -122,6 +131,13 @@ void test_tls_multiparty_handshake() {
         private_key_shares[2]   // Party 3
     };
     std::vector<size_t> party_ids = {1, 2, 3};
+    
+    std::cout << "Participating parties: [";
+    for (size_t i = 0; i < party_ids.size(); ++i) {
+        std::cout << party_ids[i];
+        if (i < party_ids.size() - 1) std::cout << ", ";
+    }
+    std::cout << "]" << std::endl;
     
     auto decrypted_pms = tls.collaborativeDecryption(
         encrypted_pms, collaborating_parties, party_ids);
