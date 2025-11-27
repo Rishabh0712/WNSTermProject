@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Get script directory and repository root
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+
 echo "╔════════════════════════════════════════════════════════╗"
 echo "║  Multi-Party TLS - OpenSSL Certificate Verification   ║"
 echo "╚════════════════════════════════════════════════════════╝"
@@ -7,7 +11,7 @@ echo ""
 
 # Step 1: Run the C++ program to generate keys and test
 echo "=== Step 1: Generate RSA Keys and Test Multi-Party Decryption ==="
-./test_openssl_rsa
+"$REPO_ROOT/artifacts/binaries/test_openssl_rsa"
 
 if [ $? -ne 0 ]; then
     echo "✗ Test failed!"
@@ -45,7 +49,15 @@ openssl pkeyutl -encrypt -pubin -inkey rsa_public.pem -in test_pms.txt -out test
 
 if [ $? -eq 0 ]; then
     echo "✓ Encryption successful"
-    echo "Encrypted size: $(stat -c%s test_pms.enc) bytes"
+    if command -v stat >/dev/null 2>&1; then
+        # Linux/WSL
+        if stat -c%s test_pms.enc >/dev/null 2>&1; then
+            echo "Encrypted size: $(stat -c%s test_pms.enc) bytes"
+        # macOS/BSD
+        elif stat -f%z test_pms.enc >/dev/null 2>&1; then
+            echo "Encrypted size: $(stat -f%z test_pms.enc) bytes"
+        fi
+    fi
 else
     echo "✗ Encryption failed"
     exit 1
@@ -96,6 +108,39 @@ echo "=== Step 5: Verify Certificate Chain ==="
 openssl verify -CAfile rsa_cert.pem rsa_cert.pem
 
 echo ""
+echo "=== Step 6: Multi-Party TLS Handshake Test (Simulated) ==="
+echo "Testing threshold cryptography with key reconstruction..."
+echo ""
+
+"$REPO_ROOT/artifacts/binaries/test_tls_multiparty"
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "✓ Multi-party TLS handshake simulation completed successfully"
+    echo "✓ Threshold (3-of-5) key reconstruction verified"
+else
+    echo "✗ Multi-party TLS handshake simulation failed"
+    exit 1
+fi
+
+echo ""
+echo "=== Step 7: Full TLS 1.2 Handshake with Multi-Party Authorization ==="
+echo "Performing actual TLS handshake with distributed private key..."
+echo ""
+
+"$REPO_ROOT/artifacts/binaries/test_tls_handshake_full"
+
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "✓ Full TLS 1.2 handshake with multi-party authorization completed"
+    echo "✓ Client-server communication verified"
+    echo "✓ Real-world threshold cryptography demonstrated"
+else
+    echo "✗ Full TLS handshake test failed"
+    exit 1
+fi
+
+echo ""
 echo "╔════════════════════════════════════════════════════════╗"
 echo "║         ALL VERIFICATION TESTS PASSED!                 ║"
 echo "╚════════════════════════════════════════════════════════╝"
@@ -108,4 +153,13 @@ echo "  - rsa_cert.pem        (Self-signed X.509 certificate)"
 echo "  - test_pms.txt        (Test pre-master secret)"
 echo "  - test_pms.enc        (Encrypted PMS)"
 echo "  - test_pms_decrypted.txt (Decrypted PMS)"
+echo ""
+echo "Multi-party TLS tests completed:"
+echo "  ✓ RSA key splitting and reconstruction (Shamir Secret Sharing)"
+echo "  ✓ Threshold cryptography (3-of-5 parties required)"
+echo "  ✓ Simulated TLS handshake with multiparty validation"
+echo "  ✓ Full TLS 1.2 client-server handshake"
+echo "  ✓ Real-world distributed private key usage (TLSv1.2)"
+echo "  ✓ Secure data exchange with threshold authorization"
+echo "  ✓ ServerKeyExchange signature verification"
 echo ""
